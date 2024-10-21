@@ -1,0 +1,161 @@
+@use 'variables' as v;
+.splide:not( .is-overflow ) .splide__slide:last-child {
+    margin: 0 !important;
+  }
+.spacer {
+    height: 20px;
+    background-color: white;
+}
+
+#splide01 {
+    display: grid;
+    justify-content: center;
+}
+#grid-container {
+    background: white; height: 675px;
+    @media (min-width: 290px) {
+        height: 660px;
+    }
+    @media (min-width: 400px) {
+        height: 650px;
+    }
+    @media (min-width: 411px) {
+        height: 620px;
+    }
+    @media (min-width: v.$mobile) {
+        height: 630px;
+    }
+}
+
+#container-prj {
+    height: 100%;
+}
+
+#container {
+    width: 300px;
+    p {
+        color: black;
+    }
+}
+
+@-webkit-keyframes moving_arrow {
+    0% { 
+        left: 0px;
+    }
+    50% {
+        left: 5px;
+    }
+    100% {
+        left: 0px;
+    }
+
+}
+
+@keyframes moving_arrow {
+    0% { 
+        left: 0px;
+    }
+    50% {
+        left: 5px;
+    }
+    100% {
+        left: 0px;
+    }
+
+}
+
+#featured-projects-header-flex-container-div {
+    display: -webkit-box; 
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+            justify-content: center;
+}
+
+#featured-container {
+    height: 600px;
+    @media (min-width: v.$desktop) {
+        height: 500px;
+    }
+    
+    width: 100%;
+    background: #033f60;
+}
+
+#img-container {
+    height: 100%;
+    margin-bottom: 10px;
+    width: 100%; 
+    background: black; 
+    img {
+        height: 270px;
+        width: 100%;
+        position: relative;
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
+        @media (min-width: v.$mobile) {
+              height: 300px;
+        }
+        @media (min-width: 310px) {
+            height: 250px;
+        }
+    }
+}
+
+#information-container-projects {
+    width: 92%;
+}
+
+#view-container {
+    display: none;
+    font-weight: 900;
+    @media (min-width: v.$desktop) {
+        display: block;
+    }
+    span {
+        svg {
+            position: relative;
+            -webkit-animation: moving_arrow 3s infinite;
+                    animation: moving_arrow 3s infinite;
+        }
+    }
+}
+#view-container-mobile {
+    font-weight: 900;
+    display: block;
+    @media (min-width: v.$desktop) {
+        display: none;
+    }
+    #featured-projects-view-more {
+        -webkit-box-pack: end;
+        -webkit-justify-content: end;
+                justify-content: end;
+        padding-top: 15px;
+        padding-right: 6%;
+    }
+    span {
+        svg {
+            position: relative;
+            -webkit-animation: moving_arrow 3s infinite;
+                    animation: moving_arrow 3s infinite;
+        }
+    }
+}
+
+.slide-number {
+    font-weight: 900;
+    font-size: 30px;
+}
+
+#title-container-featured {
+    font-weight: bold;
+}
+
+#location-cotainer {
+    font-weight: 500;
+}
+
+.splide {
+    width: 1200px;
+}

@@ -1,0 +1,47 @@
+@use 'variables' as v;
+
+#title {
+    display: flex;
+    justify-content: center;
+    background-color: v.$company-color;
+    @media (min-width: v.$desktop) {
+        background-color: black;
+    }
+#services-title {
+    width: 93vw;
+    max-width: 1000px;
+    #services-text {
+        font-size: 35px;
+        font-weight: 700;
+    }
+}
+}
+#services-container-grid {
+    display: grid;
+    place-content: center;
+    background-color: white;
+    #container-flex-services {
+        max-width: 1000px;
+        padding: 70px 30px 75px 30px;
+    }
+}
+#services-information {
+background-color: white;
+    p:first-child {
+        color: v.$company-color;
+        font-weight: 800;
+        font-size: 25px;
+        padding-bottom: 23px;
+    }
+    p:not(:first-child) {
+        color: black;
+        font-weight: 500;
+        font-size: 18.5px;
+    }
+    p:nth-child(2n) {
+        color: v.$company-color;
+        font-size: large;
+        font-weight: 700;
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,12 @@
+export const FAQ_MAP = new Map();
+export const QUESTION = 0;
+export const ANSWER = 1;
+FAQ_MAP.set(0, ['How long does a construction project typically take?', 'The duration of a construction project can vary depending on various factors such as the size of the project, complexity, weather conditions, and client requirements. We provide estimated timelines during the initial consultation and strive to complete projects within the agreed-upon timeframe.'])
+FAQ_MAP.set(1, ['What construction services do you offer?', 'We offer a wide range of construction services, including residential construction, remodeling, renovations, project management, and more. Our team of experts is skilled in handling diverse construction needs.'])
+FAQ_MAP.set(2, ['How do I get started with a construction project?', 'To get started, simply contact us through our website, phone, or email. Our team will schedule an initial consultation to discuss your project requirements, budget, timeline, and any specific design preferences. We will guide you through the entire process from planning to completion.'])
+FAQ_MAP.set(3, ['Can I make changes to the project during construction?', 'We understand that changes may arise during the construction process. We strive to accommodate reasonable changes whenever possible. However, any changes may impact the project timeline and budget. We will communicate and discuss the implications of any requested changes with you.'])
+FAQ_MAP.set(4, ['How do you ensure construction site safety?', 'Safety is a top priority for us. We follow strict safety protocols and regulations to maintain a secure construction site. Our team receives regular safety training, and we conduct inspections to identify and mitigate potential hazards.'])
+FAQ_MAP.set(5, ['Are you licensed and insured?', 'Yes, we are a licensed and insured construction company. We maintain the necessary licenses, certifications, and insurance coverage.'])
+FAQ_MAP.set(6, ['Can I see examples of your previous work?', 'Absolutely! We have a project gallery on our website showcasing our previous work. You can view photographs and descriptions of completed projects to get a better idea of our capabilities and craftsmanship.'])
+
+export default { FAQ_MAP, QUESTION, ANSWER };

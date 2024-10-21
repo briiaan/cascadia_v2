@@ -1,0 +1,155 @@
+
+@use 'variables' as v;
+
+.divider {
+    height: 2px;
+    background: v.$company-color;
+}
+
+@-webkit-keyframes open {
+    0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    50% {
+        -webkit-transform: rotate(90deg);
+                transform: rotate(90deg);
+    }
+    100% {
+        -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+    }
+}
+
+@keyframes open {
+    0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    50% {
+        -webkit-transform: rotate(90deg);
+                transform: rotate(90deg);
+    }
+    100% {
+        -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+    }
+}
+
+@-webkit-keyframes close {
+    0% {
+        -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+    }
+    50% {
+        -webkit-transform: rotate(90deg);
+                transform: rotate(90deg);
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+}
+
+@keyframes close {
+    0% {
+        -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+    }
+    50% {
+        -webkit-transform: rotate(90deg);
+                transform: rotate(90deg);
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+}
+
+.arrow-grid-container {
+    display: -ms-grid;
+    display: grid;
+    place-content: center;
+}
+
+.FAQcontainer {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 96% 4%;
+    grid-template-columns: 96% 4%;
+}
+
+#FAQ-container-main-grid {
+    width: 100%;
+    background-color: white;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+            justify-content: center;
+    vertical-align: middle;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    position: relative;
+    .faq-grid-container {
+        #FAQcontainer {
+            svg {
+                display: block;
+                position: relative;
+            }
+        }
+        overflow: hidden;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+        position: relative;
+    p {
+        color: v.$company-color;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .FAQ-question {
+        padding-top: 15px;
+        color: v.$company-color;
+        font-weight: 600;
+        opacity: 100%;
+        font-size: 3.5vw;
+        @media (min-width: v.$mobile) {
+            color: v.$company-color;
+            font-weight: 600;
+            opacity: 100%;
+            font-size: 18px;
+        }
+    }
+}
+    #FAQ-container-main {
+        padding-left: 20px;
+        padding-top: 40px;
+        padding-bottom: 45px;
+        padding-right: 20px;
+        overflow-x: hidden;
+        @media (min-width: v.$mobile) {
+            width: 1150px;
+            position: relative;
+            overflow-x: hidden;
+        }
+    #FAQ-title {
+        font-size: 4.5vw;
+        color: v.$company-color;
+        font-weight: 900; 
+        text-align: center;
+        padding-bottom: 15px;
+        @media (min-width: v.$mobile) {
+            font-size: 25px;
+            color: v.$company-color;
+            font-weight: 900; 
+            text-align: center;
+        }
+        @media (min-width: 1024px) {
+            text-align: start;
+        }
+    }
+}
+}

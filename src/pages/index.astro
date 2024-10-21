@@ -1,0 +1,96 @@
+---
+const email="inquiry@cascadiacustomframing.com"
+import Header from '../components/Header.jsx';
+import background from '../images/cascadia-roof.jpg?url';
+import background2 from '../images/cascadia-cover-1231DSKA.jpg?url'
+import stairs from '../images/staircase.jpg?url'
+import InformationContainer from '../components/InformationContainer.jsx';
+import InformationContainer2 from '../components/InformationContainer2.jsx';
+import "../styles/homepage.scss";
+import FeaturedProjects from '../components/FeaturedProjects.astro';
+import Contact from '../components/Contact.jsx'
+import FAQ from '../components/FAQ.jsx';
+import Footer from '../components/Footer.jsx';
+---
+<html lang="en">
+	<head>
+		<title>Cascadia Custom Framing | We Build Custom Single and Multi-Family Homes</title>
+		<meta name="title" content="Cascadia Custom Framing">
+		<meta charset="utf-8" />
+		<meta name="description" content="A construction framing company located in the Puget Sound area. We have built 
+        hundreds of homes, apartments, and townhomes around the Pacific Northwest. We work with individuals and companies interested in building
+        in Tacoma, Puyallup, and the greater Seattle area."/>
+		<meta property="og:title" content="Cascadia Custom Framing"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:image" content="public/14688228c6b483b074cf-cascadia-custom-framing.svg"/>
+		<meta property="og:url" content="https://cascadiacustomframing.com/"/>
+		<meta property="site_name" content="Cascadia Custom Framing"/>
+		<link rel="icon" type="image/svg+xml" href="../../public/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+		<meta name="theme-color" content="#033f60"/>
+		<meta name="generator" content={Astro.generator} />
+		<script type="application/ld+json">
+						{
+					   "@context" : "https://schema.org",
+						"@type" : "HomeAndConstructionBusiness",
+						"areaServed": {
+						"@type": "GeoCircle",
+						"geoMidpoint": {
+							"@type": "GeoCoordinates",
+							"latitude": 47.455018,
+							"longitude": -122.275665
+						},
+						"geoRadius": 100
+					},
+					"email" : "inquiry@cascadiacustomframing.com",
+					"keywords" : "construction, wood framing, build houses, houses, custom homes, remodel, addition, repair",
+					"knowsAbout" : "Construction, Wood Framing, Home Repairs, Home Additions, Home Renovations",
+					"knowsLanguage" : "English, Spanish",
+					"currenciesAccepted" : "USD",
+					"sameAs" : "https://instagram.com/cascadiacustomframing/",
+					"priceRange" : "Request a Free Consultation",
+					"image" : "https://cascadiacustomframing.com/logo.jpg",
+					"name" : "Cascadia Custom Framing",
+					"url" : "https://cascadiacustomframing.com/"
+				}
+		</script>
+			<script type="application/ld+json">
+				{
+			   "@context" : "https://schema.org",
+				"@type" : "WebSite",
+				"email" : "inquiry@cascadiacustomframing.com",
+				"keywords" : "construction, wood framing, build houses, houses, custom homes, remodel, addition, repair",
+				"knowsAbout" : "Construction, Wood Framing, Home Repairs, Home Additions, Home Renovations",
+				"knowsLanguage" : "English, Spanish",
+				"currenciesAccepted" : "USD",
+				"sameAs" : "https://instagram.com/cascadiacustomframing/",
+				"priceRange" : "Request a Free Consultation",
+				"image" : "https://cascadiacustomframing.com/logo.jpg",
+				"name" : "Cascadia Custom Framing",
+				"url" : "https://cascadiacustomframing.com/",
+		}
+</script>
+	</head>
+	<body>
+		<Header _email={email} isHomepage={true} client:load/>
+		<span id='main-page-container'>
+			<div id="introduction-container">
+			  <img id='background-image' src={background} alt="Image is showing roof" onload="img_changer()"/>
+		<div id='first-container-text'>
+		<h1>WITH OVER A DECADE OF EXPERIENCE IN FRAMING</h1>
+		<h2>WE BUILD ALL OVER THE PACIFIC NORTHWEST</h2>
+		</div>
+	</div>
+	<div id="information-container-flex">
+		<InformationContainer client:load/>
+	</div>
+		<div id='featured-container'>
+			<FeaturedProjects/>
+		</div>
+		<InformationContainer2/>
+		<Contact/>
+		<FAQ client:load/>
+		<Footer/>
+	</span>
+	</body>
+</html>

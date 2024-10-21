@@ -1,0 +1,51 @@
+@use 'variables' as v;
+
+#title {
+    display: flex;
+    justify-content: center;
+    background-color: v.$company-color;
+    @media (min-width: v.$desktop) {
+        background-color: black;
+    }
+#page-title {
+    width: 93vw;
+    max-width: 1000px;
+    #page-text {
+        font-size: 35px;
+        font-weight: 700;
+    }
+}
+}
+#page-container-grid {
+    height: calc(100% - 90px);
+    display: grid;
+    place-content: center;
+    background-color: white;
+    @media (min-width: v.$tablet) {
+        height: calc(100% - 190px);
+    }
+    #container-flex-page {
+        max-width: 1000px;
+        padding: 70px 30px 75px 30px;
+    }
+}
+#page-information {
+background-color: white;
+p:first-child {
+    color: v.$company-color;
+    font-weight: 800;
+    font-size: 25px;
+    padding-bottom: 23px;
+}
+p:not(:first-child) {
+    color: black;
+    font-weight: 500;
+    font-size: 18.5px;
+}
+p:nth-child(3n) {
+    color: v.$company-color;
+    font-size: large;
+    font-weight: 700;
+    font-size: 20px;
+}
+}

@@ -1,0 +1,71 @@
+@use 'variables' as v;
+
+#contact-us-container {
+    height: 200px;
+    width: 100%;
+    background-color: v.$company-color;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+            justify-content: center;
+    #contact-container-div{
+        width: 1440px;
+    }
+    #contact-container-flex {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        height: 200px;
+        #text-box {
+            width: 60%;
+            font-weight: 800;
+            font-size: 3.5vw;
+            display: -ms-grid;
+            display: grid;
+            place-content: center;
+            text-align: center;
+            padding: 0 5px 0 5px;
+            @media (min-width: v.$mobile) {
+                font-size: 23px;
+                width: 60%;
+                padding: 0 10% 0 10%;
+            }
+        }
+        #contact-us-button {
+            width: 40%;
+            font-weight: 900;
+            font-size: 3.5vw;
+            display: -ms-grid;
+            display: grid;
+            place-content: center;
+            text-align: center;
+            position: relative;
+            @media (min-width: v.$mobile) {
+                font-size: 23px;
+                width: 40%;
+            }
+            p {
+                position: relative;
+                z-index: 50;
+            }
+            #opacity-background {
+                background: v.$company-color;
+                opacity: 50%;
+                height: 200px;
+                width: 100%;
+                position: absolute;
+                z-index: 49;
+            }
+            img {
+                height: 200px;
+                width: 100%;
+                position: absolute;
+                z-index: 48;
+                -o-object-fit: cover;
+                   object-fit: cover;
+            }
+        }
+    }
+}

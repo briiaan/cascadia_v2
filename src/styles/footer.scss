@@ -1,0 +1,81 @@
+@use 'variables' as v;
+
+#footer {
+    height: 350px;
+    width: 100%;
+    background-color: v.$company-color;
+    @media (min-width: v.$desktop) {
+        height: 350px;
+    }
+    #footer-container {
+        display: grid;
+        height: 100%;
+        #footer-sites {
+            display: grid;
+            align-items: middle;
+            @media (min-width: v.$desktop) {
+                align-items: end;
+            }
+            #footer-sites-grid {
+                font-size: 13px;
+                gap: 40px;
+                display: grid;
+                place-content: center;
+                grid-template-columns: auto auto auto;
+                @media (min-width: v.$desktop) {
+                    gap: 60px;
+                    font-size: 15px;
+                }
+                #pages {
+                    #sites {
+                        padding-top: 10px;
+                        display: grid;
+                        grid-template-columns: 100px;
+                        gap: 10px;
+                        @media (min-width: v.$desktop) {
+                            grid-template-columns: 109px 103px;
+                        }
+                    }
+                }
+                #socials {
+                    #instagram {
+                        display: grid;
+                        place-content: center;
+                        height: 30%;
+                        justify-content: start;
+                        @media (min-width: v.$desktop) {
+                            height: 100%;
+                            justify-content: start;
+                        }                        
+                    }
+                }
+                #development {
+                    #link {
+                        padding-top: 10px;
+                    }
+                }
+            }
+        }
+        #contact {
+            text-align: center;
+            font-size: 13px;
+            @media (min-width: v.$desktop) {
+                display: grid;
+                align-items: end;
+            }
+        }
+        #copyright {
+            display: grid;
+            justify-content: center;
+            align-items: end;
+            font-size: 10px;
+            @media (min-width: v.$desktop) {
+                font-size: 12.5px;
+                align-items: end;
+                p {
+                    padding-bottom: 5px;
+                }
+            }
+        }
+    }
+} 

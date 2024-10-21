@@ -1,0 +1,54 @@
+@use 'variables' as v;
+.splide {
+    height: 100%;
+}
+#img-container{
+    width: fit-content;
+}
+#container {
+    width: 250px;
+}
+#title-container-container {
+    font-size: 12px;
+    font-weight: 700;
+}
+#location-container {
+    font-size: 12px;
+}
+
+#title {
+    display: flex;
+    justify-content: center;
+    background-color: v.$company-color;
+    @media (min-width: v.$desktop) {
+        background-color: black;
+    }
+#page-title {
+    width: 93vw;
+    max-width: 1000px;
+    #page-text {
+        font-size: 35px;
+        font-weight: 700;
+    }
+}
+}
+#page-container-grid {
+    position: relative;
+    overflow-x: hidden;
+    height: calc(100% - 90px);
+    display: grid;
+    place-content: center;
+    background-color: white;
+    @media (min-width: v.$tablet) {
+        height: calc(100% - 190px);
+    }
+    #container-flex-page {
+        max-width: 1200px;
+    }
+}
+#page-information {
+background-color: white;
+p {
+    color: black !important;
+}
+}

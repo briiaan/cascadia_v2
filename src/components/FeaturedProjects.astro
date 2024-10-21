@@ -1,0 +1,101 @@
+---
+import '../styles/featured_projects.scss'
+import '../styles/default.scss'
+import { titles, locations, numbers, images, links } from '../utils/images';
+const featured = [0, 1, 2, 3]
+import { Image } from 'astro:assets';
+---
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js" integrity="sha256-A+2opyqhvbBV8tbd9mIM8w9zvvMYHOawY03BQRtq7Kw=" crossorigin="anonymous"></script>
+<script type="module">
+import Splide from 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/+esm'
+    document.addEventListener( 'DOMContentLoaded', function() {
+    var splide = new Splide( '.splide', {
+    perPage: 3,
+    gap: 30,
+    breakpoints: {
+        600: {
+            padding: '5%',
+            perPage: 1,
+            arrows: false,
+            width: '100%',
+            height: '25rem',
+        },
+        900: { 
+            padding: '4%',
+            perPage: 1.5,
+            width: '100%',
+            arrows: false,
+        },
+        1100: { 
+            padding: '3%',
+            perPage: 2,
+            width: '100%',
+        },
+        1300: { 
+            perPage: 3,
+            width: '100%',
+        }
+    },
+    padding: '5%',
+    type: 'loop',
+    height: '25rem',
+    width: '100%',
+    interval: 2000,
+    pauseOnFocus: true,
+    pagination: false,
+    drag: true,
+    arrows: false,
+    
+} );
+    splide.mount(window.splide.Extensions);
+  } );
+  </script>
+  <div>
+    <div id='featured-projects-header-flex-container-div'>
+    <div id="featured-projects-header-flex">
+        <div><p id="featured-projects-title">FEATURED PROJECTS</p></div>
+            <a href="/projects"><div id="view-container"><div id="featured-projects-view-more">VIEW MORE
+                <span style="display: grid; place-content: center; margin-left: 10px;">
+              <svg width="16px" height="16px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#" stroke="#"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>arrow-right-circle</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" strokeidth="1" fill="none" fillRule="evenodd" sketchType="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-310.000000, -1089.000000)" fill="#FFFF"> <path d="M332.535,1105.88 L326.879,1111.54 C326.488,1111.93 325.855,1111.93 325.465,1111.54 C325.074,1111.15 325.074,1110.51 325.465,1110.12 L329.586,1106 L319,1106 C318.447,1106 318,1105.55 318,1105 C318,1104.45 318.447,1104 319,1104 L329.586,1104 L325.465,1099.88 C325.074,1099.49 325.074,1098.86 325.465,1098.46 C325.855,1098.07 326.488,1098.07 326.879,1098.46 L332.535,1104.12 C332.775,1104.36 332.85,1104.69 332.795,1105 C332.85,1105.31 332.775,1105.64 332.535,1105.88 L332.535,1105.88 Z M326,1089 C317.163,1089 310,1096.16 310,1105 C310,1113.84 317.163,1121 326,1121 C334.837,1121 342,1113.84 342,1105 C342,1096.16 334.837,1089 326,1089 L326,1089 Z" id="arrow-right-circle" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+              </span>
+            </div>
+        </div>
+    </a>
+    </div>
+</div>
+        <div style="display:flex; justify-content: center;">
+  <section class="splide" aria-label="Splide Basic HTML Example">
+    <div class="splide__track">
+          <ul class="splide__list">
+            {featured.map((x) =>
+            <li class="splide__slide">
+            <div style="height: 100%">
+                <div id="container">
+                <div id='img-container'>
+         
+                        <a href={links[x]} style="height: fit-content;"><img src={images[x]}></a>
+                </div>
+                <div id="information-container-projects-flex">
+                <div id='information-container-projects'>
+                <a href={links[x]}><p id="title-container-featured">{titles[x]}</p></a>
+                <p id="location-cotainer">{locations[x]}</p>
+                </div>
+                <p class="slide-number" >{numbers[x]}</p>
+            </div>
+            </div>
+            </div>
+            </li>
+            )}
+          </ul>
+    </div>
+  </section>
+  </div>
+  <a href="/projects"><div id="view-container-mobile"><div id="featured-projects-view-more"><a href="/projects">VIEW MORE</a>
+          <span style="display: grid; place-content: center; margin-left: 10px;">
+              <svg width="16px" height="16px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#" stroke="#"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>arrow-right-circle</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" strokeidth="1" fill="none" fillRule="evenodd" sketchType="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-310.000000, -1089.000000)" fill="#FFFF"> <path d="M332.535,1105.88 L326.879,1111.54 C326.488,1111.93 325.855,1111.93 325.465,1111.54 C325.074,1111.15 325.074,1110.51 325.465,1110.12 L329.586,1106 L319,1106 C318.447,1106 318,1105.55 318,1105 C318,1104.45 318.447,1104 319,1104 L329.586,1104 L325.465,1099.88 C325.074,1099.49 325.074,1098.86 325.465,1098.46 C325.855,1098.07 326.488,1098.07 326.879,1098.46 L332.535,1104.12 C332.775,1104.36 332.85,1104.69 332.795,1105 C332.85,1105.31 332.775,1105.64 332.535,1105.88 L332.535,1105.88 Z M326,1089 C317.163,1089 310,1096.16 310,1105 C310,1113.84 317.163,1121 326,1121 C334.837,1121 342,1113.84 342,1105 C342,1096.16 334.837,1089 326,1089 L326,1089 Z" id="arrow-right-circle" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+              </span>
+            </div>
+        </div>
+        </a>
+</div>

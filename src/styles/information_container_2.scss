@@ -1,0 +1,105 @@
+@use 'variables' as v;
+
+.bold {
+    font-weight: 800;
+}
+
+.text {
+    font-weight: 600;
+}
+
+#information-container-element {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+            justify-content: center;
+    background-color: white;
+}
+
+#information-container-2-box {
+    overflow-x: hidden;
+    width: 1440px;
+}
+#information-container-2 {
+    height: 625px;
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    ul li {
+        list-style-type: disc;
+        list-style-position: outside;
+    }
+    .box {
+        background-color: v.$company-color;
+        height: 200px;
+        width: 100%;
+        font-size: 4.1vw;
+        padding: 40px;
+        @media (min-width: calc(v.$mobile - 50px)) {
+            width: 400px;
+            font-size: 20px;
+            padding: 40px;
+        }
+        .bold {
+            padding-bottom: 30px;
+            font-size: 4.5vw;
+            @media (min-width: calc(v.$mobile - 50px)) {
+                padding-bottom: 30px;
+                font-size: 22.5px; 
+            }
+        }
+    }
+    #box-1-flex {
+        width: 93%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+                justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+                align-items: center;
+        @media (min-width: v.$desktop) {
+            margin-right: 300px;
+            width: 100%;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: end;
+            -webkit-justify-content: end;
+                    justify-content: end;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+                    align-items: center;
+        }
+    }
+    #box-2-flex {
+        width: 92%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+                justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+                align-items: center;
+        @media (min-width: v.$desktop) {
+            margin-left: 300px;
+            width: 100%;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: start;
+            -webkit-justify-content: start;
+                    justify-content: start;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+                    align-items: center;
+        }
+    } 
+}

@@ -1,0 +1,78 @@
+@use 'variables' as v;
+
+#main-page-container {
+    display: block;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    #introduction-container {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+                justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+                align-items: center;
+        height: 100vh;
+        min-height: -webkit-fill-available;
+        @media (min-width: v.$desktop) {
+            height: -webkit-calc(100vh - 101px);
+            height: calc(100vh - 101px);
+            min-height: 0;
+        }
+        img {
+            height: 100vh;
+            width: 100%;
+            position: absolute;
+            top: 0px;
+            -o-object-fit: cover;
+               object-fit: cover;
+            min-height: -webkit-fill-available;
+        }
+    }   
+}
+#first-container-text {
+    position: relative;
+    z-index: 50;
+    text-align:center;
+    h1 {
+        margin: 0 0 0 0;
+        font-size: 6.7vw;
+        font-weight: 900;
+    }
+    h2 {
+        margin: 0 0 0 0;
+        font-size: 3.7vw;
+        font-weight: 900;
+    }
+    @media (min-width: v.$mobile) {
+        h1 {
+            font-size: 6vw;
+        }
+        h2 {
+            font-size: 3.3vw;
+        }
+    }
+    @media (min-width: v.$tablet) {
+        h1 {
+            font-size: 4vw;
+        }
+        h2 {
+            font-size: 2vw;
+        }
+    }
+    @media (min-width: v.$desktop) {
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+        width: 1000px;
+        h1 {
+            font-size: 67px;
+        }
+        h2 {
+            font-size: 37px;
+        }
+    }
+}

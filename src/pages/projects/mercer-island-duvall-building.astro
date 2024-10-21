@@ -1,0 +1,48 @@
+---
+const email ="inquiry@cascadiacustomframing.com"
+import Header from '../../components/Header.jsx';
+import "../../styles/projects.scss"
+import Contact from '../../components/Contact.jsx'
+import FAQ from '../../components/FAQ.jsx';
+import Footer from '../../components/Footer.jsx';
+const projects = [0,1,2,3];
+import {mercer} from '../../utils/images.js';
+import ProjectsSlides4 from '../../components/ProjectsSlides4.astro';
+---
+<html lang="en">
+	<head>
+		<title>Cascadia Custom Framing | Mercer Island Duvall Building</title>
+		<meta name="title" content="Projects">
+		<meta charset="utf-8" />
+		<meta name="description" content="A construction framing company located in the Puget Sound area. We have built 
+        hundreds of homes, apartments, and townhomes around the Pacific Northwest. We work with individuals and companies interested in building
+        in Tacoma, Puyallup, and the greater Seattle area."/>
+		<meta property="og:title" content="Cascadia Custom Framing | Mercer Island Duvall Building"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:image" content="public/14688228c6b483b074cf-cascadia-custom-framing.svg"/>
+		<meta property="og:url" content="https://cascadiacustomframing.com/"/>
+		<meta property="site_name" content="Cascadia Custom Framing"/>
+		<link rel="icon" type="image/svg+xml" href="../../public/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#033f60"/>
+		<meta name="generator" content={Astro.generator} />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"/>
+	</head>
+	<body>
+		<Header _email={email} isHomepage={false} client:load/>
+		<span id='main-page-container'>
+			<div id="title">
+		<div id="page-title">
+			<h1 id="page-text">Mercer Island Duvall Residence</h1>
+		</div>
+	</div>
+		
+	</div>
+	</div>
+        <ProjectsSlides4 images={mercer} featured={projects}/>
+		<Contact/>
+		<FAQ client:load/>
+		<Footer/>
+	</span>
+	</body>
+</html>
