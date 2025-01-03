@@ -33,8 +33,11 @@
                 padding: 0 10% 0 10%;
             }
         }
-        #contact-us-button {
+        a {
             width: 40%;
+            position: relative;
+            display: inherit;
+        #contact-us-button {
             font-weight: 900;
             font-size: 3.5vw;
             display: -ms-grid;
@@ -44,7 +47,7 @@
             position: relative;
             @media (min-width: v.$mobile) {
                 font-size: 23px;
-                width: 40%;
+                width: 100%;
             }
             p {
                 position: relative;
@@ -67,5 +70,6 @@
                    object-fit: cover;
             }
         }
+    }
     }
 }

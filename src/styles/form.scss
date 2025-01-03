@@ -1,0 +1,53 @@
+@use 'variables' as v;
+
+#form-container {
+    position: relative;
+    display: inline;
+    #first-name-container {
+        display: grid;
+        input {
+            border-radius: 5px;
+            outline: 1px;
+            border: 2px solid #DCDCDC;
+            font-family: v.$standard-font;
+        }
+        input::placeholder  {
+            color: #E1E1E1;
+            font-size: 18px;
+            font-family: v.$standard-font;
+            font-weight: 700;
+        }
+    }
+    #last-name-container {
+        @extend #first-name-container
+    }
+    #email-container {
+        @extend #first-name-container
+    }
+    #message-container {
+        display: grid;
+        textarea {
+            border-radius: 5px;
+            outline: 1px;
+            padding: 0px;
+            border: 2px solid #DCDCDC;
+            min-height: 206px;
+            resize: none;
+            font-family: v.$standard-font;
+        }
+        textarea::placeholder {
+            color: #E1E1E1;
+            font-size: 18px;
+            font-family: v.$standard-font;
+            font-weight: 700
+        }
+    }
+    #submit-container {
+        position: relative;
+        display: grid;
+        place-content: end;
+        button {
+
+        }
+    }
+}

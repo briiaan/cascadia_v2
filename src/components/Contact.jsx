@@ -9,11 +9,13 @@ export default function Contact() {
                 <div id='text-box'>
                 <p>Interested in a free consultation or just want to know an estimate for a project?</p>
                 </div>
+                <a href='/contact-us'>
                 <div id='contact-us-button' className='noselect pointer'>
                     <p>Contact Us</p>
                     <div id='opacity-background'></div>
                     <img src={image}/>
                 </div>
+                </a>
             </div>
             </div>
             </div>

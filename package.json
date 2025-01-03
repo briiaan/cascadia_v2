@@ -18,6 +18,7 @@
     "@types/react-dom": "^18.3.1",
     "astro": "^4.16.6",
     "framer-motion": "^11.11.9",
+    "nodemailer": "^6.9.16",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sass": "^1.80.1",

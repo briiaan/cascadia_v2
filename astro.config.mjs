@@ -8,8 +8,12 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://www.cascadiacustomframing.com',
   devToolbar: {
     enabled: false
+  },
+  server:{
+    port: 3999,
   },
   output: 'server',
 
