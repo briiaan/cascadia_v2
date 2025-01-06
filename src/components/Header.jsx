@@ -94,7 +94,7 @@ export default function Header({_email, isHomepage}) {
                     <li ref={scope}><p><a ref={about} href='/about-us' className="hover">Who We Are</a></p><div className='line-animation'></div></li>
                     <li ref={scope1}><p><a ref={services} href='/services' className="hover">Services</a></p><div className='line-animation'></div></li>
                     <li ref={scope2}><p><a ref={projects} href='/projects' className="hover">Projects</a></p><div className='line-animation'></div></li>
-                    <li><p className="hover noselect" ref={contact}><a href="/contact-us">Contact Us</a></p></li>
+                    <li><a href="/contact-us"><p className="hover noselect" ref={contact}>Contact Us</p></a></li>
                 </ul>
             </div>
             <div id='line-container'></div>

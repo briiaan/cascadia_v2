@@ -1,14 +1,16 @@
 import type { APIRoute } from 'astro'
+import { escapeHTML } from 'astro/runtime/server/escape.js';
 
 export const POST: APIRoute = async ({ request }) => {
     const errors = {first_name: "", email: "", message: ""}
-
         // GETS DATA
         const data = await request.formData();
-        const first_name = data.get("firstname");
-        const last_name = data.get("lastname");
-        const email = data.get("email");
-        const message = data.get("message");
+
+        const first_name = escapeHTML(data.get("firstname"));
+        const last_name = escapeHTML(data.get("lastname"));
+        const email = escapeHTML(data.get("email"));
+        const message = escapeHTML(data.get("message"));
+
 
         // VALIDATES
         if(typeof first_name !== "string" || first_name.length < 1) {
@@ -21,7 +23,6 @@ export const POST: APIRoute = async ({ request }) => {
             errors.message += "Please enter a message.";
         }
         if(errors.first_name || errors.email || errors.message) {
-            console.log("UHM")
             return new Response(
                 JSON.stringify(
                     {notice: "errors"}
@@ -29,7 +30,6 @@ export const POST: APIRoute = async ({ request }) => {
                 { status: 400 }
             )
         } else {
-            console.log("HERE")
             return new Response(
                 JSON.stringify({
                     notice: "success"

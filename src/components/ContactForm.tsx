@@ -1,7 +1,7 @@
 import {useState} from "react";
 import type { FormEvent } from "react";
 import "../styles/form.scss"
-
+import ContactNotification from "./ContactNotification";
 
 export default function Form() {
     const [responseMessage, setResponseMessage] = useState("");
@@ -10,7 +10,7 @@ export default function Form() {
         e.preventDefault();
         const formData = new FormData(e.target as HTMLFormElement);
         try {
-        const response = await fetch("/src/api/feedback.ts", {
+        const response = await fetch("/api/feedback", {
             method: "POST",
             body: formData,
         })

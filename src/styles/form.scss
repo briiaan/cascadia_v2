@@ -6,26 +6,33 @@
     #first-name-container {
         display: grid;
         input {
+            height: 30px;
             border-radius: 5px;
             outline: 1px;
             border: 2px solid #DCDCDC;
             font-family: v.$standard-font;
+            padding-left: 5px;
+            padding-right: 5px;
+            font-size: 13px;
         }
         input::placeholder  {
             color: #E1E1E1;
-            font-size: 18px;
+            font-size: 16px;
             font-family: v.$standard-font;
-            font-weight: 700;
+            font-weight: 900;
         }
     }
     #last-name-container {
+        margin-top: 5px;
         @extend #first-name-container
     }
     #email-container {
+        margin-top: 5px;
         @extend #first-name-container
     }
     #message-container {
         display: grid;
+        margin-top: 5px;
         textarea {
             border-radius: 5px;
             outline: 1px;
@@ -34,19 +41,39 @@
             min-height: 206px;
             resize: none;
             font-family: v.$standard-font;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-top: 5px;
+            font-size: 13px;
         }
         textarea::placeholder {
             color: #E1E1E1;
-            font-size: 18px;
+            font-size: 16px;
             font-family: v.$standard-font;
-            font-weight: 700
+            font-weight: 900
         }
     }
     #submit-container {
+        margin-top: 5px;
         position: relative;
         display: grid;
         place-content: end;
         button {
+            border: none;
+            border-radius: 5px;
+            background-color: #2C2C2C;
+            color: white;
+            font-family: v.$standard-font;
+            font-weight: 800;
+            font-size: 16px;
+            height: 30px;
+            width: 140px;
+        }
+        button:hover {
+            cursor: pointer;
+            background-color: #5a5a5a;
+        }
+        button:click {
 
         }
     }
