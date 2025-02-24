@@ -37,12 +37,12 @@ export const POST: APIRoute = async ({ request }) => {
         } else {
             // WRITE EMAIL HERE
             const transporter = nodemailer.createTransport({
-                host: process.env.HOST,
+                host: process.env.HOSTNAME_SMTP,
                 port: 587,
                 secure: false,
                 auth: {
-                    user: process.env.USER,
-                    pass: process.env.PASS,
+                    user: process.env.EMAIL_USER,
+                    pass: process.env.EMAIL_PASSWORD,
                 },
                 tls: {
                     rejectUnathorized: false,
