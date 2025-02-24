@@ -37,12 +37,12 @@ export const POST: APIRoute = async ({ request }) => {
         } else {
             // WRITE EMAIL HERE
             const transporter = nodemailer.createTransport({
-                host: "smtp.mymangomail.com",
+                host: "",
                 port: 587,
                 secure: false,
                 auth: {
-                    user: "bot@cascadiacustomframing.com",
-                    pass: "3tGHwubwiKZkyJ58",
+                    user: "",
+                    pass: "",
                 },
                 tls: {
                     rejectUnathorized: false,
