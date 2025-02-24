@@ -21,17 +21,19 @@
             color: #a7a7a7;
             font-size: 15px;
             font-family: v.$standard-font;
-            font-weight: 700;
+            font-weight: 900;
         }
     }
     #phone-number-container {
         @extend #first-name-container;
     }
     #email-container {
+        margin-top: 5px;
         @extend #first-name-container
     }
     #message-container {
         display: grid;
+        margin-top: 5px;
         textarea {
             border-radius: 5px;
             outline: 1px;
@@ -46,10 +48,11 @@
             color: #a7a7a7;
             font-size: 15px;
             font-family: v.$standard-font;
-            font-weight: 700
+            font-weight: 900
         }
     }
     #submit-container {
+        margin-top: 5px;
         position: relative;
         display: grid;
         place-content: end;
