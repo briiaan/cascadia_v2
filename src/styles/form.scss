@@ -3,23 +3,29 @@
 #form-container {
     position: relative;
     display: inline;
+    display: grid;
+    gap: 10px;
     #first-name-container {
         display: grid;
         input {
+            height: 25px;
+            width: 300px;
             border-radius: 5px;
             outline: 1px;
             border: 2px solid #DCDCDC;
             font-family: v.$standard-font;
+            padding: 5px;
+            font-size: 16px;
         }
         input::placeholder  {
-            color: #E1E1E1;
-            font-size: 18px;
+            color: #a7a7a7;
+            font-size: 15px;
             font-family: v.$standard-font;
             font-weight: 700;
         }
     }
-    #last-name-container {
-        @extend #first-name-container
+    #phone-number-container {
+        @extend #first-name-container;
     }
     #email-container {
         @extend #first-name-container
@@ -29,15 +35,16 @@
         textarea {
             border-radius: 5px;
             outline: 1px;
-            padding: 0px;
+            padding: 5px;
             border: 2px solid #DCDCDC;
             min-height: 206px;
             resize: none;
             font-family: v.$standard-font;
+            font-size: 16px;
         }
         textarea::placeholder {
-            color: #E1E1E1;
-            font-size: 18px;
+            color: #a7a7a7;
+            font-size: 15px;
             font-family: v.$standard-font;
             font-weight: 700
         }
@@ -47,7 +54,31 @@
         display: grid;
         place-content: end;
         button {
-
+            border: 2px solid #DCDCDC;
+            height: 40px;
+            width: 150px;
+            cursor: pointer;
+            transition: background-color 1s linear;
+            font-family: v.$standard-font;
+            font-weight: 800;
+            border-radius: 10px;
+        }
+        button:hover {
+            background-color: #dbdbdb;
+        }
+    }
+    #response-container {
+        border-radius: 10px;
+        height: 35px;
+        display: grid;
+        place-content: center;
+        border-color: rgb(90, 173, 118);
+        border-radius: 10px;
+        border-width: 3px;
+        border-style: solid;
+        visibility: hidden;
+        p {
+            color: rgb(0, 0, 0);
         }
     }
 }

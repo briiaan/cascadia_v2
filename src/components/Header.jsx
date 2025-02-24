@@ -19,8 +19,11 @@ export default function Header({_email, isHomepage}) {
     const main_nav = useRef(null);
     const spacer = useRef(null);
     const mobile_items = useRef(null);
+    const mobile_nav_menu = useRef(null);
+    const mobile_nav_menu_one = useRef(null)
     const [isOpen, setOpen] = useState(false);
-    const svg = useRef(null);
+    const svg = useRef(null); 
+    const svg_itself_lol = useRef(null);
     /*
     WHEN HEADER ELEMENT IS HOVERED IT SETS HOVERING TO TRUE.
     */
@@ -43,10 +46,52 @@ export default function Header({_email, isHomepage}) {
         contact.current.addEventListener("mouseover", () => {
           contact.current.style.animation = 'contact-hover 0.65s forwards'
         })
-        svg.current.addEventListener("mousedown", () => {
-          svg.current.style.animation = 'menuOpen 0.5s forwards'
-        })
-    }) 
+    }, []) 
+
+    useEffect(() => {
+
+
+      
+      const handleToggle = () => {
+          console.log(isOpen);
+
+          // Reset animations first
+          mobile_nav_menu.current.style.animation = "none";
+          mobile_items.current.style.animation = "none";
+
+          // Force reflow (restart animations)
+          mobile_nav_menu.current.offsetHeight;
+          mobile_items.current.offsetHeight;
+
+          // Apply new animations
+          requestAnimationFrame(() => {
+              if (!isOpen) {
+                  mobile_nav_menu.current.style.animation = "menuOpen 0.55s forwards";
+                  mobile_items.current.style.animation = "menuShow 0.5s forwards";
+
+                  svg_itself_lol.current.classList.remove("rotateUp");
+                  svg_itself_lol.current.classList.add("rotateDown");
+              } else {
+                  mobile_nav_menu.current.style.animation = "menuClose 0.55s forwards";
+                  mobile_items.current.style.animation = "menuHide 0.5s forwards";
+                  svg_itself_lol.current.classList.remove("rotateDown");
+                  svg_itself_lol.current.classList.add("rotateUp");
+              }
+
+              setOpen(prev => !prev);
+          });
+      };
+
+      if (svg.current) {
+          svg.current.addEventListener("mousedown", handleToggle);
+      }
+
+      return () => {
+          if (svg.current) {
+              svg.current.removeEventListener("mousedown", handleToggle);
+          }
+      };
+  }, [isOpen]); //
 
     /*
     WHEN HEADER ELEMENT IS NOT HOVERED IT SETS HOVERING TO FALSE.
@@ -98,7 +143,15 @@ export default function Header({_email, isHomepage}) {
                 </ul>
             </div>
             <div id='line-container'></div>
-            <div id='mobile-nav'>
+            <div id="mobile-nav-2" ref={mobile_nav_menu}>
+            <ul id='mobile-nav-menu' ref={mobile_items}>
+                <li><p><a href='/about-us.html' className="hover">About Us</a></p></li>
+                    <li><p><a href='/services.html' className="hover">Services</a></p></li>
+                    <li><p><a href='/projects.html' className="hover">Projects</a></p></li>
+                    <li><p><a href='/contact-us.html' className="hover">Contact Us</a></p></li>
+                </ul>
+            </div>
+            <div id='mobile-nav' ref={mobile_nav_menu_one}>
                 <a id='cascadia' href='/'>
                     <img src={logo.src}
                     width="150"
@@ -109,19 +162,10 @@ export default function Header({_email, isHomepage}) {
                     />
                 </a>
                 <div id='svg-icon-container' ref={svg}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+                <svg ref={svg_itself_lol} xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
   <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
 </svg>
 </div>
-                <ul id='mobile-nav-menu' ref={mobile_items}>
-                <li><p><a href='/about-us.html' className="hover">About Us</a></p></li>
-                    <li><p><a href='/services.html' className="hover">Services</a></p></li>
-                    <li><p><a href='/projects.html' className="hover">Projects</a></p></li>
-                    <li><p><a href='/contact-us.html' className="hover">Contact Us</a></p></li>
-                </ul>
-                <div id="menu-button-container" ref={menu_button}>
-        <svg width="64px" height="64px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="#" stroke="#"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>arrow-right-circle</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd"> <g id="Icon-Set-Filled" transform="translate(-310.000000, -1089.000000)" fill="#FFFF"> <path d="M332.535,1105.88 L326.879,1111.54 C326.488,1111.93 325.855,1111.93 325.465,1111.54 C325.074,1111.15 325.074,1110.51 325.465,1110.12 L329.586,1106 L319,1106 C318.447,1106 318,1105.55 318,1105 C318,1104.45 318.447,1104 319,1104 L329.586,1104 L325.465,1099.88 C325.074,1099.49 325.074,1098.86 325.465,1098.46 C325.855,1098.07 326.488,1098.07 326.879,1098.46 L332.535,1104.12 C332.775,1104.36 332.85,1104.69 332.795,1105 C332.85,1105.31 332.775,1105.64 332.535,1105.88 L332.535,1105.88 Z M326,1089 C317.163,1089 310,1096.16 310,1105 C310,1113.84 317.163,1121 326,1121 C334.837,1121 342,1113.84 342,1105 C342,1096.16 334.837,1089 326,1089 L326,1089 Z" id="arrow-right-circle"> </path> </g> </g> </g></svg>
-      </div>
                 </div>
         </header>
         </>

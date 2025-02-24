@@ -25,9 +25,17 @@
     background: '';
 }
 
+.rotateDown {
+    transform: rotate(180deg);
+}
+
+.rotateUp {
+    transform: rotate(0deg);
+}
+
 @-webkit-keyframes menuOpen {
     from {
-        height: 100px;
+        height: 60px;
         background-color: '';
     }
     to {
@@ -38,12 +46,12 @@
 
 @keyframes menuOpen {
     from {
-        height: 100px;
+        height: 60px;
         background-color: '';
     }
     to {
         height: 400px;
-        background-color: #033f60;
+        background-color: rgba(3, 63, 96);
     }
 }
 
@@ -53,8 +61,8 @@
         background-color: #033f60;
     }
     to {
-        height: 100px;
-        background-color: '';    }
+        height: 60px;
+    }
 }
 
 @keyframes menuClose {
@@ -63,8 +71,9 @@
         background-color: #033f60;
     }
     to {
-        height: 100px;
-        background-color: '';    }
+        height: 60px;
+        background-color: '';    
+}
 }
 
 @-webkit-keyframes menuShow {
@@ -107,7 +116,6 @@
     }
 
     100% {
-
     }
 }
 
@@ -174,7 +182,39 @@ header {
         display: block;
     }
 }
-
+#mobile-nav-2 {
+    overflow: hidden;
+    z-index: 5;
+    background-color: #033f60;
+    display: none;
+    #mobile-nav-menu {
+        display: grid;
+        position: absolute;
+        top: 27%;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: 20px;
+        padding-left: 25px;
+        gap: 20px;
+        li {
+            font-size: 23px;
+            font-weight: 800;
+        }
+    }
+    @media (max-width: calc(v.$desktop - 1px)) {
+        display: block;
+        margin-left: 2%;
+        margin-right: 2%;
+        position: fixed;
+        height: 60px;
+        width: 96%;
+        -webkit-border-radius: 30px;
+                border-radius: 30px;
+        bottom: 2%;
+        z-index: 98;
+        -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+}
 #mobile-nav {
     overflow: hidden;
     display: none;
@@ -195,9 +235,6 @@ header {
     img {
         display: none;
     }
-    #mobile-nav-menu {
-        display: none;
-    }
     #menu-button-container {
         display: none;
     }
@@ -215,6 +252,11 @@ header {
         z-index: 101;
         -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
                 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+    #svg-icon-container {
+        svg {
+            transition: transform 0.05s linear;
+        }
     }
 }
 

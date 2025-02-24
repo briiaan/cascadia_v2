@@ -1,5 +1,4 @@
 import '../styles/information_container_2.scss'
-import house from '../images/house.jpg?url'
 
 export default function InformationContainer2() {
     return (

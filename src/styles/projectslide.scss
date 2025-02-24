@@ -75,12 +75,11 @@
 
 #featured-container {
     height: 600px;
+    width: 100%;
+    background: #033f60;
     @media (min-width: v.$desktop) {
         height: 500px;
     }
-    
-    width: 100%;
-    background: #033f60;
 }
 
 #img-container {

@@ -17,11 +17,17 @@
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
     "astro": "^4.16.6",
+    "dotenv": "^16.4.7",
     "framer-motion": "^11.11.9",
-    "nodemailer": "^6.9.16",
+    "nodemailer": "^6.10.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-turnstile": "^1.1.4",
+    "sanitize-html": "^2.14.0",
     "sass": "^1.80.1",
     "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "@types/sanitize-html": "^2.13.0"
   }
 }

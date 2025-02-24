@@ -45,6 +45,7 @@
             place-content: center;
             text-align: center;
             position: relative;
+            width: 100%;
             @media (min-width: v.$mobile) {
                 font-size: 23px;
                 width: 100%;

@@ -5,6 +5,9 @@ import node from '@astrojs/node';
 import sitemap from '@astrojs/sitemap';
 
 import react from '@astrojs/react';
+import dotenv from "dotenv"
+
+dotenv.config()
 
 // https://astro.build/config
 export default defineConfig({
