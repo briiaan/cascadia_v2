@@ -145,10 +145,10 @@ export default function Header({_email, isHomepage}) {
             <div id='line-container'></div>
             <div id="mobile-nav-2" ref={mobile_nav_menu}>
             <ul id='mobile-nav-menu' ref={mobile_items}>
-                <li><p><a href='/about-us.html' className="hover">About Us</a></p></li>
-                    <li><p><a href='/services.html' className="hover">Services</a></p></li>
-                    <li><p><a href='/projects.html' className="hover">Projects</a></p></li>
-                    <li><p><a href='/contact-us.html' className="hover">Contact Us</a></p></li>
+                <li><p><a href='/about-us' className="hover">About Us</a></p></li>
+                    <li><p><a href='/services' className="hover">Services</a></p></li>
+                    <li><p><a href='/projects' className="hover">Projects</a></p></li>
+                    <li><p><a href='/contact-us' className="hover">Contact Us</a></p></li>
                 </ul>
             </div>
             <div id='mobile-nav' ref={mobile_nav_menu_one}>
