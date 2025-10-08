@@ -4,7 +4,7 @@ import sanitizeHtml from 'sanitize-html';
 import nodemailer from "nodemailer";
 
 export const POST: APIRoute = async ({ request }) => {
-        // GETS DATA
+        // GETS DATA 
         const data = await request.formData();
 
         let name = sanitizeHtml(String(data.get("name")));
@@ -37,12 +37,12 @@ export const POST: APIRoute = async ({ request }) => {
         } else {
             // WRITE EMAIL HERE
             const transporter = nodemailer.createTransport({
-                host: process.env.HOSTNAME_SMTP,
-                port: 587,
+                host: import.meta.env.EMAIL_HOST,
+                port: import.meta.env.EMAIL_PORT,
                 secure: false,
                 auth: {
-                    user: process.env.EMAIL_USER,
-                    pass: process.env.EMAIL_PASSWORD,
+                    user: import.meta.env.EMAIL_USER,
+                    pass: import.meta.env.EMAIL_PASS,
                 },
                 tls: {
                     rejectUnathorized: false,
@@ -51,8 +51,8 @@ export const POST: APIRoute = async ({ request }) => {
 
             async function main() {
                 const info = await transporter.sendMail({
-                    from: `bot@cascadiacustomframing.com`,
-                    to: `info@cascadiacustomframing.com`,
+                    from: import.meta.env.EMAIL_FROM,
+                    to: import.meta.env.EMAIL_TO,
                     subject: `${name} sent a message from cascadiacustomframing.com`,
                     text: `Phone Number: ${phone_number} Email: ${email} The message: ${message}`,
                     html: `<p>Phone Number: ${phone_number} <br><br> Email: ${email} <br><br> Message: ${message}</p>`
