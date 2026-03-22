@@ -8,10 +8,6 @@ export default defineConfig({
 
   output: 'server',
 
-  server: {
-    port: 3999,
-  },
-
   devToolbar: {
     enabled: false,
   },

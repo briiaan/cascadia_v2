@@ -29,8 +29,5 @@ COPY . .
 # Build the app with Bun
 RUN bun run build
 
-# Expose the port (Railway will use PORT env var)
-EXPOSE 3999
-
 # Run the app with Bun
 CMD ["bun", "run", "start"]
