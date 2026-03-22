@@ -11,6 +11,7 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: 3999,
+    port: process.env.PORT ? parseInt(process.env.PORT) : 3999,
   },
 
   devToolbar: {
@@ -21,7 +22,6 @@ export default defineConfig({
     mode: "standalone",
     entrypointResolution: "auto"
   }),
-  
 
   integrations: [
     sitemap(),
