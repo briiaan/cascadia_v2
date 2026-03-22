@@ -8,6 +8,11 @@ export default defineConfig({
 
   output: 'server',
 
+  server: {
+    host: '0.0.0.0',
+    port: 3999,
+  },
+
   devToolbar: {
     enabled: false,
   },
@@ -16,11 +21,7 @@ export default defineConfig({
     mode: "standalone",
     entrypointResolution: "auto"
   }),
-  image: {
-  service: {
-    entrypoint: "astro/assets/services/noop",
-  },
-},
+  
 
   integrations: [
     sitemap(),
